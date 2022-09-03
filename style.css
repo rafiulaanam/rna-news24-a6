@@ -17,3 +17,7 @@ body{
 .portal{
     color:#5D5FEF ;
 }
+
+.mouse{
+    cursor: pointer;
+}

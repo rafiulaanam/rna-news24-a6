@@ -7,24 +7,41 @@ const catagories = () => {
 
 const dataLoad = (data) => {
   const catUl = document.getElementById("catul");
-
+  
   data.forEach((catdata) => {
     const li = document.createElement("li");
     li.classList.add("nav-item");
 
+
     li.innerHTML = `
-    <a class="nav-link active" aria-current="page" href="#">${catdata.category_name}</a>
+
+    <a onclick="card('${catdata.category_id}')" class="nav-link active mouse" aria-current="page"  >${catdata.category_name}</a>
+    
     
     `;
+//  li= li.textContent('')
     catUl.appendChild(li);
+    
   });
+
+
+
+
+
+
+
+
+
+
+
+
 };
 
 catagories();
 
 
-const card = () => {
-    const url = "https://openapi.programming-hero.com/api/news/category/01";
+const card = (cat_id) => {
+    const url = `https://openapi.programming-hero.com/api/news/category/${cat_id}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => cardLoad(data.data));
@@ -32,10 +49,11 @@ const card = () => {
 
 
   const cardLoad = (data) => {
-    console.log(data)
+   
     const cardSec = document.getElementById('cardsec')
-  
+    cardSec.textContent = '';
     data.forEach((catdata) => {
+        console.log(catdata)
         const cardBody = document.createElement('section')
         cardBody.classList.add('mt-4')
         cardBody.innerHTML=`
@@ -89,6 +107,11 @@ const card = () => {
         cardSec.appendChild(cardBody)
         
     });
+
+
+
+
+
   };
 
-  card()
+//  card('01')
