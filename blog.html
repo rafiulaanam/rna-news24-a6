@@ -64,34 +64,131 @@
                   </h2>
                   <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                     <div class="accordion-body">
-                      <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        In javascript, you can create/declare variables using keywords var, let, and const.
+<br><br>
+                        Let’s see the differences between these keywords to have a better understanding of what to use and where.
+                        
+                        Scope
+                        
+                        Scope essentially means where these variables are available for use.
+                        <br><br>
+                        There are two types of scopes in JS:
+                        
+                         
+                        
+                        Function Scope: Visibility is limited to the function.
+                         function myFn() {
+                            <br><br>
+                             var x = 10; 
+                             <br><br>
+                             console.log(x); //prints 10
+                             <br><br>
+                         } 
+                         <br><br>
+                         console.log(x); // ReferenceError: x is not defined
+                         <br><br>
+                        
+                         
+                        Block Scope: Visibility is limited to the block of code.
+                         if (true) { 
+                        
+                             let x = 10; 
+                        
+                             console.log(x); //prints 10
+                        
+                         } 
+                        
+                         console.log(x); // ReferenceError: x is not defined
+                         
+                         
+                        Now, that we have idea of scope. We can discuss the scope of var, let and const.
+                        
+                        var declarations are function scoped.
+                        let declarations are block scoped.
+                        const declarations are block scoped.
+                         
+                        Redefining and Redeclaring feature
+                        
+                        A variable declared using ‘var’ can be redefined and even redeclared anywhere throughout its scope.
+                        
+                        var x = 30;
+                        console.log(x); //prints 30
+                        x = "Hi"; //redefining or re-assigning (works without any error)
+                        console.log(x); //prints "Hi"
+                         
+                        var y = 10;
+                        console.log(y); //prints 10
+                        var y = "Hello"; //Redeclaring (works without any error)
+                        console.log(y) //Prints "Hello"
+                         
+                        
+                        
+                        Every const declaration must be initialized at the time of declaration.
                     </div>
                   </div>
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                      Accordion Item #2
+                        The Difference Between Regular Functions and Arrow Functions
                     </button>
                   </h2>
                   <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
                     <div class="accordion-body">
-                      <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        JavaScript's arrow functions might seem the same as regular functions on the surface, but they have some very important differences:
+                        <br><br>
+                        Syntactical differences <br>
+                        this value (execution context)<br>
+                        Usage as methods<br>
+                        Usage as constructors<br>
+                        arguments binding
                     </div>
                   </div>
                 </div>
-                <div class="accordion-item">
+<div class="accordion-item">
                   <h2 class="accordion-header" id="panelsStayOpen-headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                      Accordion Item #3
+                        when to use forEach, map, filter, reduce, and find in JavaScript
                     </button>
                   </h2>
                   <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
                     <div class="accordion-body">
-                      <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        When to use map?
+                        .map() when you want to transform elements in an array.
+                        
+                        When to use filter?
+                        .filter() when you want to select a subset of multiple elements from an array.
+                        
+                        When to use find?
+                        .find() When you want to select a single element from an array.
+                        
+                        When to use reduce?
+                        .reduce() when you want derive a single value from multiple elements in an array.
                     </div>
                   </div>
                 </div>
+
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                       Why we Should use Template String?
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                    <div class="accordion-body">
+                        Template literals are enclosed by backtick (`) characters instead of double or single quotes.
+<br><br>
+Along with having normal strings, template literals can also contain other parts called placeholders, which are embedded expressions delimited by a dollar sign and curly braces: ${expression}. The strings and placeholders get passed to a function — either a default function, or a function you supply. The default function (when you don't supply your own) just performs string interpolation to do substitution of the placeholders and then concatenate the parts into a single string.
+<br><br>
+To supply a function of your own, precede the template literal with a function name; the result is called a tagged template. In that case, the template literal is passed to your tag function, where you can then perform whatever operations you want on the different parts of the template literal.
+<br><br>
+To escape a backtick in a template literal, put a backslash (\) before the backtick.
+
+`\`` === '`' // --> true
+                    </div>
+                  </div>
+                </div>
+                
               </div>
 
         </section>
