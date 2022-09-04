@@ -35,8 +35,11 @@ const card = (cat_id) => {
 const cardLoad = (data) => {
   const cardSec = document.getElementById("cardsec");
   cardSec.textContent = "";
+  
+ 
+   
   data.forEach((catdata) => {
-    console.log(catdata);
+    
     const cardBody = document.createElement("section");
     cardBody.classList.add("mt-4");
     cardBody.innerHTML = `
@@ -96,9 +99,14 @@ const cardLoad = (data) => {
    
 
   });
+const datafound = document.getElementById('found1')
+  for(let i = 0; i<data.length; i++){
+   
+    datafound.value = (i+1) +' '+ 'items found for category' 
+  }
+  
   
 };
-
 
 
 const newsDetails = (news_id) => {
@@ -138,9 +146,6 @@ modalinside.innerHTML = `
 modalBody.appendChild(modalinside)
 
 })
-
-
-
 
 
 
