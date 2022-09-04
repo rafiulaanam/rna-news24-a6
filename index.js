@@ -7,11 +7,10 @@ const catagories = () => {
 
 const dataLoad = (data) => {
   const catUl = document.getElementById("catul");
-  
+
   data.forEach((catdata) => {
     const li = document.createElement("li");
     li.classList.add("nav-item");
-
 
     li.innerHTML = `
 
@@ -19,46 +18,30 @@ const dataLoad = (data) => {
     
     
     `;
-//  li= li.textContent('')
+    //  li= li.textContent('')
     catUl.appendChild(li);
-    
   });
-
-
-
-
-
-
-
-
-
-
-
-
 };
 
 catagories();
 
-
 const card = (cat_id) => {
-    const url = `https://openapi.programming-hero.com/api/news/category/${cat_id}`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => cardLoad(data.data));
-  };
+  const url = `https://openapi.programming-hero.com/api/news/category/${cat_id}`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => cardLoad(data.data));
+};
 
-
-  const cardLoad = (data) => {
-   
-    const cardSec = document.getElementById('cardsec')
-    cardSec.textContent = '';
-    data.forEach((catdata) => {
-        console.log(catdata)
-        const cardBody = document.createElement('section')
-        cardBody.classList.add('mt-4')
-        cardBody.innerHTML=`
+const cardLoad = (data) => {
+  const cardSec = document.getElementById("cardsec");
+  cardSec.textContent = "";
+  data.forEach((catdata) => {
+    console.log(catdata);
+    const cardBody = document.createElement("section");
+    cardBody.classList.add("mt-4");
+    cardBody.innerHTML = `
         
-        <div class="border-none br p-3 bg-white rounded-3">
+        <div class=" br p-3 bg-white rounded-3">
                     <div class="d-flex">
                       <div class="w-25">
                         <img src="${catdata.thumbnail_url}"  alt="" />
@@ -94,7 +77,11 @@ const card = (cat_id) => {
                             <i class="fa-regular fa-star"></i>
                           </div>
             
-                          <div><i class="fa-solid fa-arrow-right fs-4"></i></div>
+                          <div>
+                          
+                          
+                          
+                          <button class="fa-solid fa-arrow-right fs-4 bg-white " data-bs-toggle="modal" data-bs-target="#exampleModal"></button></div>
                         </div>
                       </div>
                     </div>
@@ -102,16 +89,10 @@ const card = (cat_id) => {
         
         
         
-        `
-        
-        cardSec.appendChild(cardBody)
-        
-    });
+        `;
 
-
-
-
-
-  };
+    cardSec.appendChild(cardBody);
+  });
+};
 
 //  card('01')
