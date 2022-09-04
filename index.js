@@ -81,7 +81,7 @@ const cardLoad = (data) => {
                           
                           
                           
-                          <button class="fa-solid fa-arrow-right fs-4 bg-white border border-white" data-bs-toggle="modal" data-bs-target="#exampleModal"></button></div>
+                          <button onclick="newsDetails('${catdata._id}')" class="fa-solid fa-arrow-right fs-4 bg-white border border-white" data-bs-toggle="modal" data-bs-target="#exampleModal"></button></div>
                         </div>
                       </div>
                     </div>
@@ -92,7 +92,57 @@ const cardLoad = (data) => {
         `;
 
     cardSec.appendChild(cardBody);
+
+   
+
   });
+  
 };
 
-//  card('01')
+
+
+const newsDetails = (news_id) => {
+const url = `https://openapi.programming-hero.com/api/news/${news_id}`
+fetch(url)
+.then(response => response.json())
+.then(json => modal(json.data))
+
+}
+
+
+const modal = (data) =>{
+    
+
+const modalTitle = document.getElementById('exampleModalLabel')
+const modalBody = document.getElementById('modalbody')
+modalBody.textContent = "";
+data.forEach(modalData =>{
+    // console.log(modalData);
+modalTitle.innerText = modalData.author.name
+
+const modalinside = document.createElement('div')
+ 
+modalinside.innerHTML = `
+
+
+<div>
+<h4> ${modalData.title} </h4>
+
+<p>${modalData.details}  </p>
+
+
+</div>
+
+
+`
+modalBody.appendChild(modalinside)
+
+})
+
+
+
+
+
+
+}
+
