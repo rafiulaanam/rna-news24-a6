@@ -81,7 +81,7 @@ const cardLoad = (data) => {
                           
                           
                           
-                          <button class="fa-solid fa-arrow-right fs-4 bg-white " data-bs-toggle="modal" data-bs-target="#exampleModal"></button></div>
+                          <button class="fa-solid fa-arrow-right fs-4 bg-white border border-white" data-bs-toggle="modal" data-bs-target="#exampleModal"></button></div>
                         </div>
                       </div>
                     </div>
