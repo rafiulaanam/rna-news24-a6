@@ -100,9 +100,12 @@ const cardLoad = (data) => {
 
   });
 const datafound = document.getElementById('found1')
+
+
   for(let i = 0; i<data.length; i++){
    
     datafound.value = (i+1) +' '+ 'items found for category' 
+    
   }
   
   
